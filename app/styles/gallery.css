@@ -157,3 +157,12 @@ h3 {
   margin-right: 15px;
   max-width: 600px;
 }
+
+
+.home::before {
+  content: '\002630';
+  margin: 0;
+  position: fixed;
+  left: 15px;
+  top: 15px;
+}

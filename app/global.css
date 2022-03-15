@@ -11,7 +11,7 @@ body a {
   color: inherit;
 }
 
-h1 {
+.home h1 {
   text-align: center;
   font-weight: 100;
   font-size: 20pt;

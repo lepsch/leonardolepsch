@@ -36,7 +36,7 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Link to='/'><h1>leonardo lepsch</h1></Link>
+        <Link className='home' to='/'><h1>leonardo lepsch</h1></Link>
         <hr />
         <Outlet />
         <ScrollRestoration />
