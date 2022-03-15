@@ -155,4 +155,5 @@ h3 {
 .modal .content .outer .inner .frame img {
   margin-left: 15px;
   margin-right: 15px;
+  max-width: 600px;
 }
