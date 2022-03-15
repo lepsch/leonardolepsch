@@ -1,4 +1,3 @@
-// import outdent from 'outdent'
 import Gallery from './Gallery'
 
 import _mg_0816 from '~/images/burano/_mg_0816.jpg'
