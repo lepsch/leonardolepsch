@@ -57,24 +57,25 @@ export default function Index() {
             </li>
           )}
         </ul>
-        <ul className='pages'>
-          { [...Array(totalPages)].map((_, index) =>
-            <li className={`page${page === index ? ' active' : ''}`} key={index}>
-              { page === index
-                ? index + 1
-                : <Link to={`?${PAGE_PARAM}=${index}`}>{ index + 1 }</Link> }
-            </li>) }
-            <li className='page previous'>
-              { page > 0
-                ? <Link to={`?${PAGE_PARAM}=${page - 1}`}>{ PREVIOUS_LABEL }</Link>
-                : PREVIOUS_LABEL }
-            </li>
-            <li className='page next'>
-              { page + 1 < totalPages
-                ? <Link to={`?${PAGE_PARAM}=${page + 1}`}>{ NEXT_LABEL }</Link>
-                : NEXT_LABEL }
-            </li>
-        </ul>
+        { totalPages > 1 &&
+          <ul className='pages'>
+            { [...Array(totalPages)].map((_, index) =>
+              <li className={`page${page === index ? ' active' : ''}`} key={index}>
+                { page === index
+                  ? index + 1
+                  : <Link to={`?${PAGE_PARAM}=${index}`}>{ index + 1 }</Link> }
+              </li>) }
+              <li className='page previous'>
+                { page > 0
+                  ? <Link to={`?${PAGE_PARAM}=${page - 1}`}>{ PREVIOUS_LABEL }</Link>
+                  : PREVIOUS_LABEL }
+              </li>
+              <li className='page next'>
+                { page + 1 < totalPages
+                  ? <Link to={`?${PAGE_PARAM}=${page + 1}`}>{ NEXT_LABEL }</Link>
+                  : NEXT_LABEL }
+              </li>
+          </ul> }
       </div>
     </div>
     { typeof photoIndex === 'number' &&
