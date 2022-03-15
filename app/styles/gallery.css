@@ -78,7 +78,6 @@ h3 {
   border-left: 1px solid #292929;
   background-color: #141414;
   aspect-ratio: 1;
-  cursor: pointer;
 }
 
 .gallery .thumbnail:hover {
