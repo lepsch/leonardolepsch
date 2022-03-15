@@ -1,6 +1,7 @@
 
 import React from 'react'
 import { Link, useSearchParams } from 'remix'
+import galleries from '~/galleries'
 
 const CONTACT_PARAM = 'contact'
 
@@ -12,24 +13,10 @@ export default function Index() {
     <div className='mainpage'>
       <div className='content'>
         <ul className='menu'>
-          <li>
-            <Link to='/home-made-witches'>Home Made Witches</Link>
-          </li>
-          <li>
-            <Link to='/burano'>Burano</Link>
-          </li>
-          <li>
-            <Link to='/pipa'>Pipa</Link>
-          </li>
-          <li>
-            <Link to='/portugal-pequeno'>Portugal Pequeno</Link>
-          </li>
-          <li>
-            <Link to='/rio-das-pedras'>Rio das Pedras</Link>
-          </li>
-          <li>
-            <Link to='/mills-flour'>Mill's Flour</Link>
-          </li>
+          { galleries.map(gallery =>
+            <li key={gallery.id}>
+              <Link to={gallery.id}>{ gallery.title }</Link>
+            </li>) }
           <li className='contact-menu'>
             <Link to={`?${CONTACT_PARAM}=1`}>Contact</Link>
           </li>
