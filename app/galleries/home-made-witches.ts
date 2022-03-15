@@ -1,4 +1,6 @@
 import outdent from 'outdent'
+import Gallery from './Gallery'
+
 import IMG01_2830 from '../images/home-made-witches/IMG01_2830.jpg'
 import IMG02_2813b from '../images/home-made-witches/IMG02_2813b.jpg'
 import IMG03_2883b from '../images/home-made-witches/IMG03_2883b.jpg'
@@ -79,7 +81,7 @@ import IMG31_9443_t from '../images/home-made-witches/thumbnails/IMG31_9443.jpg'
 import IMG32_0352_t from '../images/home-made-witches/thumbnails/IMG32_0352.jpg'
 import IMG32_9943_t from '../images/home-made-witches/thumbnails/IMG32_9943.jpg'
 
-const images = [
+const images: Gallery['images'] = [
   {
     original: IMG01_2830,
     thumbnail: IMG01_2830_t,
@@ -377,14 +379,12 @@ const images = [
     `
   },
 ]
-// .map(image => ({
-//   ...image,
-//   thumbnailHeight: '50px',
-//   thumbnailWidth: '50px',
-// }))
 
-export default {
+const gallery: Gallery = {
+  id: 'home-made-witches',
   images,
   title: 'Home Made Witches',
   subtitle: 'Living back in the burning times',
 }
+
+export default gallery

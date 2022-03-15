@@ -1,8 +1,8 @@
 
 import React from 'react'
-import { Link, LinksFunction, useSearchParams } from 'remix'
-import gallery from '../../galleries/home-made-witches'
+import { Link, LinksFunction, LoaderFunction, redirect, useParams, useSearchParams } from 'remix'
 import styles from '~/styles/gallery.css'
+import galleries from '~/galleries'
 
 const IMAGES_PER_PAGE = 9
 const INDEX_PARAM = 'i'
@@ -20,8 +20,17 @@ export const links: LinksFunction = () => {
 const PREVIOUS_LABEL = 'Previous'
 const NEXT_LABEL = 'Next'
 
+export const loader: LoaderFunction = async ({ params }) => {
+  const gallery = galleries.find(gallery => gallery.id === params.gallery)
+  return gallery ? null : redirect('/')
+}
+
 export default function Index() {
+  const params = useParams()
   const [searchParams] = useSearchParams()
+
+  const galleryId = params.gallery
+  const gallery = galleries.find(gallery => gallery.id === galleryId)! // validated on the `loader`
 
   const { images, title, subtitle } = gallery
   const photoIndexParam = searchParams.get(INDEX_PARAM)
